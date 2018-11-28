@@ -13,11 +13,14 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Draft", name: "draft", widget: "boolean", default: true}
-      - {label: "Categories", name: "categories", widget: "string", required: true}
+      - {label: "Categories", name: "categories", widget: "hidden", default: "Podcast"}
       - {label: "Tags", name: "tags", widget: "list", required: false}
-      - {label: Author, name: author, widget: hidden, default: KoderunnesML}
-      - {label: Author Image, name: authorImage, widget: hidden, required: uploads/koderunners.jpg}
-      - {label: Header Image, name: headerImage, widget: image, required: uploads/koderunners_header.jpg}
-      - {label: Body, name: body, widget: image, required: "markdown"}
+      - {label: Author, name: author, widget: hidden, default: Chris Stayte}
+      - {label: Author Image, name: authorImage, widget: hidden, default: "uploads/koderunners.jpg"}
+      - {label: "Header Image", name: image, widget: image, required: false}
+      - {label: Commenting, name: comments, widget: boolean, default: true}
+      - {label: Sharing, name: share, widget: boolean, default: true}
+      - {label: Type, name: type, widget: hidden, default: "post"}
+      - {label: "Body", name: "body", widget: "markdown"}
